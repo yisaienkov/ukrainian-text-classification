@@ -1,0 +1,10 @@
+FROM python:3.7
+
+COPY ./app_server/ /core/
+
+WORKDIR /core/
+
+RUN python -m pip install -U pip
+RUN pip install -r requirements.txt
+
+ENTRYPOINT ["python", "main_roberta.py"]
